@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring DOM</title>
+    <style>
+        article{
+            border: 2px solid tomato;
+            border-radius: 20px;
+            margin: 10px;
+            padding: 10px;
+        }
+        .special h3{
+            
+        }
+    </style>
+</head>
+<body>
+    <section>
+       <article>
+           <h3>article-1</h3>
+           <p class="author">author-1</p>
+           <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque mollitia velit culpa at exercitationem iure laboriosam dolore magnam iste accusantium ipsum, quaerat aliquid nostrum qui quidem omnis sed porro aut!</p>
+       </article>
+       <article class="special">
+           <h3>article-2</h3>
+           <p class="author">author-2</p>
+           <p class="description">Necessitatibus facilis nisi libero tempore laudantium accusamus optio magnam corporis. Atque omnis vitae temporibus cupiditate error enim excepturi corrupti accusamus, voluptates quam quisquam odit saepe at incidunt ipsum cumque quae.</p>
+       </article>
+       <article>
+           <h3>article-3</h3>
+           <p class="author">author-3</p>
+           <p class="description">Quisquam cum expedita sed exercitationem commodi quod iusto delectus laborum eligendi. Optio assumenda consequuntur fugiat laboriosam iure. Voluptatem dolor recusandae quae doloremque adipisci autem in vel, inventore eligendi maxime? Facilis.</p>
+       </article>
+    </section>
+</body>
+<script>
+    document.body.style.backgroundColor = "tomato";
+    var authors = document.querySelectorAll('.special h3');
+    for (var i = 0; i <authors.length; i ++){
+        var element = authors[i];
+        // console.log(element.innerHTML);
+        element.innerHTML = 'Lekhok-' + (i+1);
+
+        element.style.backgroundColor = 'lightblue';
+        element.style.fontsize = '45px';
+        element.style.margin = '10px';
+        // console.log(element);
+    }
+</script>
+</html>
