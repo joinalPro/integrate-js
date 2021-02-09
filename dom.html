@@ -19,9 +19,9 @@
 </head>
 <body>
     <section>
-       <article>
+       <article id="first-article">
            <h3>article-1</h3>
-           <p class="author">author-1</p>
+           <p class="author" id="bestseller">author-1</p>
            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque mollitia velit culpa at exercitationem iure laboriosam dolore magnam iste accusantium ipsum, quaerat aliquid nostrum qui quidem omnis sed porro aut!</p>
        </article>
        <article class="special">
@@ -34,20 +34,29 @@
            <p class="author">author-3</p>
            <p class="description">Quisquam cum expedita sed exercitationem commodi quod iusto delectus laborum eligendi. Optio assumenda consequuntur fugiat laboriosam iure. Voluptatem dolor recusandae quae doloremque adipisci autem in vel, inventore eligendi maxime? Facilis.</p>
        </article>
+       <article>
+           <h3>Gorcery List</h3>
+           <ul id="gift-list">
+               <li>git item-1</li>
+               <li>git item-2</li>
+               <li>git item-3</li>
+               <li>git item-4</li>
+               <li>git item-5</li>
+           </ul>
+       </article>
     </section>
 </body>
 <script>
-    document.body.style.backgroundColor = "tomato";
-    var authors = document.querySelectorAll('.special h3');
-    for (var i = 0; i <authors.length; i ++){
-        var element = authors[i];
-        // console.log(element.innerHTML);
-        element.innerHTML = 'Lekhok-' + (i+1);
+   const article = document.getElementById('first-article');
+   const newParagraph = document.createElement('p');
+   newParagraph.innerHTML = 'This is added by JS';
+   article.appendChild(newParagraph);
 
-        element.style.backgroundColor = 'lightblue';
-        element.style.fontsize = '45px';
-        element.style.margin = '10px';
-        // console.log(element);
-    }
+   //add one more gift item
+    const ul = document.getElementById('gift-list');
+    const li = document.createElement('li');
+    li.innerHTML = 'Brand new Gift';
+    ul.appendChild(li);
+
 </script>
 </html>
